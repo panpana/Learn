@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>quickSort</title>
+</head>
+<body>
+<script type="text/javascript">
+	//快排
+	function quickSort (a) {
+		//判断数组个数，若小于等于1，返回
+		if (a.length <= 1) {
+			return a;
+		} 
+		//以最后一个元素作为基准，小于等于最后一个元素的放在left数组中，大于它的放在right数组中
+		var last = a.pop(),
+			left = [],
+			right = [];
+
+			a.forEach( function(item) {
+				if (item <= last ) {
+					left.push(item);
+				}else {
+					right.push(item);
+				}
+
+			});
+			//递归，直至两个数组都变为有序，将他们连接起来
+			var aleft = quickSort(left),
+				aright = quickSort(right);
+
+			return aleft.concat(last, aright);
+	}
+
+var arr = [3, 6, 9, 2, 4, 22, 1, 3];
+alert(quickSort(arr));
+
+
+
+
+
+</script>
+</body>
+</html>

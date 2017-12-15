@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>getFileFormat</title>
+</head>
+<body>
+<script type="text/javascript">
+	var url = "index.txt";
+	function getFileFormat (url) {
+		var pos = url.lastIndexOf(".");
+		return url.slice(pos);//或者url.substr(pos)
+	}
+
+	var formatName = getFileFormat(url);
+	console.log(formatName)
+</script>
+</body>
+</html>

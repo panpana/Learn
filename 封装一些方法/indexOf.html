@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>封装indexOf方法</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//IE6,7,8不支持indeOf()方法
+		function arrayIndexOf (arr, value) {
+			for (var i = 0; i < arr.length; i++) {
+				if (a[i] === value){
+					return i;
+				}
+			}
+			return -1;
+
+		}
+
+		var a = [1, 2, 7, 12, 9, 3, 13];
+		console.log("arrayIndexOf(a, 7)  :" + arrayIndexOf(a, 7));
+		console.log("arrayIndexOf(a, '7')  :" + arrayIndexOf(a, "7"));
+
+		//arrayIndexOf("7") 返回-1，要相匹配字符串形式的数字，需要通过Number()方法将其转换为数字，
+		//或者在条件判断中用 == 也能能达到目的哦~
+		console.log("arrayIndexOf(a, Number(‘7’))  :" + arrayIndexOf(a, Number("7")));
+ 
+	</script>
+
+</body>
+</html>
